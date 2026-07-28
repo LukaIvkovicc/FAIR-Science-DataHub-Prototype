@@ -1,0 +1,57 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "doi:10.0000/fair-data-hub-demo",
+  "name": "Synthetic fungal strain metadata demo dataset",
+  "description": "Small synthetic dataset used to demonstrate structured scientific data ingestion, validation, API access, and FAIR-style metadata export.",
+  "license": "CC0-1.0",
+  "creator": {
+    "@type": "Organization",
+    "name": "Portfolio demonstration"
+  },
+  "keywords": [
+    "FAIR data",
+    "scientific collections",
+    "metadata",
+    "FastAPI"
+  ],
+  "url": "https://example.org/fair-scientific-data-hub-prototype",
+  "isAccessibleForFree": true,
+  "includedInDataCatalog": {
+    "@type": "DataCatalog",
+    "name": "FAIR Scientific Data Hub Prototype"
+  },
+  "measurementTechnique": [
+    "DNA marker sequence",
+    "phenotypic trait observation"
+  ],
+  "variableMeasured": [
+    "taxon",
+    "strain",
+    "sequence marker",
+    "trait"
+  ],
+  "distribution": {
+    "@type": "DataDownload",
+    "encodingFormat": "application/json",
+    "contentUrl": "/export/metadata"
+  },
+  "additionalProperty": [
+    {
+      "name": "taxa_count",
+      "value": 3
+    },
+    {
+      "name": "strain_count",
+      "value": 3
+    },
+    {
+      "name": "sequence_count",
+      "value": 3
+    },
+    {
+      "name": "provenance_note",
+      "value": "Synthetic data for portfolio demonstration only."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+services:
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://fair_user:${POSTGRES_PASSWORD:-fair_password}@db:5432/fair_data_hub
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: fair_data_hub
+      POSTGRES_USER: fair_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-fair_password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U fair_user -d fair_data_hub" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:

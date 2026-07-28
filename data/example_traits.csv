@@ -1,0 +1,5 @@
+strain_code,trait_name,trait_value,unit
+FSDH-001,growth_temperature,25,C
+FSDH-002,growth_temperature,22,C
+FSDH-003,substrate_use,glucose,
+

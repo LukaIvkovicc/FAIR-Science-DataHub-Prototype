@@ -1,0 +1,5 @@
+strain_code,scientific_name,origin_country,isolation_source,collected_on,provenance
+FSDH-001,Aspergillus demoensis,Netherlands,soil sample,2024-05-14,Synthetic example strain for demo ingestion
+FSDH-002,Penicillium exemplare,Croatia,archive culture,2023-09-02,Synthetic example strain for demo ingestion
+FSDH-003,Saccharomyces samplei,Germany,fermented fruit,2024-01-18,Synthetic example strain for demo ingestion
+

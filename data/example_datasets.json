@@ -1,0 +1,12 @@
+[
+  {
+    "identifier": "doi:10.0000/fair-data-hub-demo",
+    "title": "Synthetic fungal strain metadata demo dataset",
+    "description": "Small synthetic dataset used to demonstrate structured scientific data ingestion, validation, API access, and FAIR-style metadata export.",
+    "license": "CC0-1.0",
+    "creator": "Portfolio demonstration",
+    "keywords": ["FAIR data", "scientific collections", "metadata", "FastAPI"],
+    "landing_page": "https://example.org/fair-scientific-data-hub-prototype"
+  }
+]
+
