@@ -8,8 +8,12 @@ router = APIRouter(prefix="/sequences", tags=["sequences"])
 
 
 @router.get("", response_model=list[schemas.SequenceRead])
-def read_sequences(db: Session = Depends(get_db)) -> list[schemas.SequenceRead]:
-    return crud.list_sequences(db)
+def read_sequences(
+    strain_id: int | None = None,
+    marker: str | None = None,
+    db: Session = Depends(get_db),
+) -> list[schemas.SequenceRead]:
+    return crud.list_sequences(db, strain_id=strain_id, marker=marker)
 
 
 @router.post("", response_model=schemas.SequenceRead, status_code=201)

@@ -88,3 +88,17 @@ def test_api_duplicate_sequence_post_is_idempotent(data_dir) -> None:
         assert len(client.get("/sequences").json()) == 3
     finally:
         app.dependency_overrides.clear()
+
+
+def test_api_supports_lightweight_browse_filters(data_dir) -> None:
+    client = _client_with_example_data(data_dir)
+    try:
+        taxa = client.get("/taxa", params={"scientific_name": "penicillium"}).json()
+        strains = client.get("/strains", params={"origin_country": "croatia"}).json()
+        sequences = client.get("/sequences", params={"marker": "ITS"}).json()
+
+        assert [taxon["scientific_name"] for taxon in taxa] == ["Penicillium exemplare"]
+        assert [strain["strain_code"] for strain in strains] == ["FSDH-002"]
+        assert {sequence["accession"] for sequence in sequences} == {"SYN000001", "SYN000002"}
+    finally:
+        app.dependency_overrides.clear()

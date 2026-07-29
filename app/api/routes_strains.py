@@ -8,8 +8,12 @@ router = APIRouter(prefix="/strains", tags=["strains"])
 
 
 @router.get("", response_model=list[schemas.StrainRead])
-def read_strains(db: Session = Depends(get_db)) -> list[schemas.StrainRead]:
-    return crud.list_strains(db)
+def read_strains(
+    taxon_id: int | None = None,
+    origin_country: str | None = None,
+    db: Session = Depends(get_db),
+) -> list[schemas.StrainRead]:
+    return crud.list_strains(db, taxon_id=taxon_id, origin_country=origin_country)
 
 
 @router.post("", response_model=schemas.StrainRead, status_code=201)

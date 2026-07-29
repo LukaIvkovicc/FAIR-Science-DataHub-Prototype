@@ -24,6 +24,26 @@ List taxa:
 curl http://localhost:8000/taxa
 ```
 
+Filter taxa by partial scientific name:
+
+```bash
+curl "http://localhost:8000/taxa?scientific_name=penicillium"
+```
+
+Filter strains by country or taxon:
+
+```bash
+curl "http://localhost:8000/strains?origin_country=croatia"
+curl "http://localhost:8000/strains?taxon_id=1"
+```
+
+Filter sequences by marker or strain:
+
+```bash
+curl "http://localhost:8000/sequences?marker=ITS"
+curl "http://localhost:8000/sequences?strain_id=1"
+```
+
 Export FAIR-style metadata:
 
 ```bash
