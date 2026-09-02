@@ -5,10 +5,6 @@ It demonstrates how synthetic mycology-style records can be ingested, validated,
 stored relationally, served through an API, searched with lightweight filters,
 and exported as FAIR-style machine-readable metadata.
 
-This is a portfolio prototype for review and discussion. It is not a production
-platform, and it does not include confidential, internal, or institution-specific
-data.
-
 ## Why It Exists
 
 Scientific data infrastructure work often lives between software engineering,
